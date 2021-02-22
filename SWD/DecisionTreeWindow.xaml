@@ -1,0 +1,19 @@
+﻿<Window x:Class="SWD.DecisionTreeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SWD"
+        mc:Ignorable="d"
+        Title="DecisionTreeWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="createBtn" Content="Create Tree" HorizontalAlignment="Left" Margin="295,40,0,0" VerticalAlignment="Top" Width="85" Click="CreateTree" Height="30"/>
+        <TextBox x:Name="indexes" HorizontalAlignment="Left" Height="30" Margin="35,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <Label x:Name="label1" Content="Wybierz indeks pierwszej kolumny (licząc od 0)" HorizontalAlignment="Left" Margin="33,14,0,0" VerticalAlignment="Top"/>
+        <ScrollViewer Margin="35,110,0,0">
+            <TextBlock x:Name="rules" HorizontalAlignment="Left" Margin="35,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="299" Width="747"/>
+        </ScrollViewer>
+        <Label x:Name="label" Content="Reguły" HorizontalAlignment="Left" Margin="30,84,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

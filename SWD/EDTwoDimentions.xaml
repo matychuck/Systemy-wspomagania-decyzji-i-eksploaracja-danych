@@ -1,0 +1,26 @@
+﻿<Window x:Class="SWD.EDTwoDimentions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SWD"
+        xmlns:oxy="http://oxyplot.codeplex.com"
+        xmlns:oxy1="http://oxyplot.org/wpf"
+        mc:Ignorable="d"
+        Title="EDTwoDimentions" Height="500" Width="1100">
+    <Grid>
+        <oxy1:PlotView Model="{Binding MyModel}" Name="plot" Margin="10,55,142,10"/>
+        <ComboBox x:Name="comboBoxX" HorizontalAlignment="Left" Margin="101,14,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="label" Content="Zmienna X" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.577"/>
+        <ComboBox x:Name="comboBoxY" HorizontalAlignment="Left" Margin="311,14,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="label2" Content="Zmienna Y" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.577"/>
+        <ComboBox x:Name="comboBoxC" HorizontalAlignment="Left" Margin="502,14,0,0" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="label3" Content="Klasa" HorizontalAlignment="Left" Margin="460,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.577"/>
+        <Button x:Name="drawButton" Content="Rysuj" HorizontalAlignment="Left" Margin="685,14,0,0" VerticalAlignment="Top" Width="75" Click="DrawButton_Click"/>
+        <Button x:Name="drawAxesButton" Content="Klasyfikuj" HorizontalAlignment="Left" Margin="785,14,0,0" VerticalAlignment="Top" Width="75" Click="DrawAxesButton_Click" IsEnabled="False"/>
+        <Grid HorizontalAlignment="Left" Height="454" Margin="965,55,0,-40" VerticalAlignment="Top" Width="117" Name="legendGrid" RenderTransformOrigin="0.385,0.374">
+        </Grid>
+        <Button x:Name="everythingButton" Content="Wszystko" HorizontalAlignment="Left" Margin="875,14,0,0" VerticalAlignment="Top" Width="75" Click="DrawEverything" IsEnabled="False"/>
+        <Button x:Name="stepButton" Content="Step" HorizontalAlignment="Left" Margin="965,14,0,0" VerticalAlignment="Top" Width="75" Click="StepButton_Click" IsEnabled="False"/>
+    </Grid>
+</Window>

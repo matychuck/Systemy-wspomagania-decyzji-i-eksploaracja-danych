@@ -1,0 +1,64 @@
+﻿<Window x:Class="SWD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SWD"
+        mc:Ignorable="d"
+        Title="Preprocessing i klasyfikacja" Height="450" Width="830">
+    <Grid>
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Menu>
+                        <MenuItem Header="Plik">
+                            <MenuItem Header="Otwórz" Click="OpenFile" />
+                            <MenuItem Header="Zapisz" Click="SaveFile"/>
+                        </MenuItem>
+                    </Menu>
+                    <Button Content="Zamiana" Click="ChangeTextToNumeric" IsEnabled="False" Name="changeButton"/>
+                    <Button Content="Dyskretyzacja" Click="Discretize" IsEnabled="False" Name="discretizeButton"/>
+                    <Button Content="Normalizacja" Click="Normalize" IsEnabled="False" Name="normalizeButton"/>
+                    <Button Content="Zmiana przedziału" Click="ChangeRange" IsEnabled="False" Name="rangedButton"/>
+                    <Button Content="Zaznacz" Click="SelectPercentage" IsEnabled="False" Name="percentButton"/>
+                    <Menu>
+                        <MenuItem Header="Histogram" IsEnabled="False" Name="histogramButton">
+                            <MenuItem Header="Zmienna dyskretna" Click="DrawHistogram" />
+                            <MenuItem Header="Zmienna ciągła" Click="DrawHistogramContinuous" />
+                        </MenuItem>
+                    </Menu>
+                    <Menu>
+                        <MenuItem Header="Wykres" IsEnabled="False" Name="chartsButton">
+                            <MenuItem Header="2D" Click="Draw2DChart" />
+                            <MenuItem Header="3D" Click="Draw3DChart" />
+                        </MenuItem>
+                    </Menu>
+                    <Menu>
+                        <MenuItem Header="Klasyfikacja" IsEnabled="False" Name="classificationButton">
+                            <MenuItem Header="Metoda KNN" Click="KNN" />
+                            <MenuItem Header="Metoda Leave-one-out" Click="LeaveOneOut" />
+                        </MenuItem>
+                    </Menu>
+                    <Menu>
+                        <MenuItem Header="ED" IsEnabled="False" Name="EDButton">
+                            <MenuItem Header="Dwa wymiary" Click="TwoDimentionsED" />
+                            <MenuItem Header="Więcej wymiarów" Click="MoreDimensionsED" />
+                        </MenuItem>
+                    </Menu>
+                    <Menu>
+                        <MenuItem Header="K-średnich" IsEnabled="False" Name="kAverageButton">
+                            <MenuItem Header="Działaj" Click="KAverageClassify" />
+                            <MenuItem Header="Ręczna klasyfikacja" Click="ManualClassify" />
+                            <MenuItem Header="Miara podobieństwa" Click="SimilarityCount" />
+                        </MenuItem>
+                    </Menu>
+                    <Button Content="Drzewo decyzyjne" Click="DecisionTree" IsEnabled="False" Name="decisionTreeButton"/>
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
+        <DataGrid x:Name="dataGridView"  Height="350" Margin="10,40,0,0" VerticalAlignment="Top" Width="800" CanUserAddRows="False"
+                          AutoGenerateColumns="True" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch" ColumnWidth="*" 
+                          ItemsSource="{Binding}" SelectionMode="Extended" SelectionUnit="FullRow" IsReadOnly="False"/>
+
+    </Grid>
+</Window>

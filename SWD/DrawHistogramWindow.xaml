@@ -1,0 +1,17 @@
+﻿<Window x:Class="SWD.DrawHistogramWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="http://oxyplot.codeplex.com"
+        xmlns:oxy1="http://oxyplot.org/wpf"
+        xmlns:local="clr-namespace:SWD"
+        mc:Ignorable="d"
+        Title="Histogram" Height="450" Width="800">
+
+    <Grid>
+        <oxy1:PlotView Model="{Binding MyModel}" Name="plot"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="145,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label x:Name="label" Content="Wybierz kolumnę" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.577"/>
+    </Grid>
+</Window>

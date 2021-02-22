@@ -1,0 +1,20 @@
+﻿SWD
+
+
+exe
+C#
+.cs
+C:\Magisterka sem2\SWD\SWD\SWD\obj\Debug\
+SWD
+none
+false
+DEBUG;TRACE
+C:\Magisterka sem2\SWD\SWD\SWD\App.xaml
+191513661649
+1309830172
+49715218677
+214494944
+3DWindow.xaml;ChangeTextToNumeric.xaml;DecisionTreeWindow.xaml;DiscretizeWindow.xaml;DrawHistogramContinuousWindow.xaml;DrawHistogramWindow.xaml;EDMoreDimentions.xaml;EDTwoDimentions.xaml;KAverageWindow.xaml;KNNMethod.xaml;LeaveOneOutWindow.xaml;MainWindow.xaml;ManualClassificationWindow.xaml;NewRangeWindow.xaml;NormalizeWindow.xaml;QualityTableWindow.xaml;ScatterPlotWindow.xaml;SelectPercentageWindow.xaml;SimilarityCountWindow.xaml;
+
+False
+

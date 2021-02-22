@@ -1,0 +1,84 @@
+﻿<Window x:Class="SWD._3DWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SWD"
+        mc:Ignorable="d"
+        Title="_3DWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*" />
+            <RowDefinition Height="Auto" MinHeight="16" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="170" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Viewport3D Name="mainViewport" 
+                    Grid.Column="1" 
+                    Grid.Row="0"
+                    ClipToBounds = "False"  
+                    IsHitTestVisible="false"
+                    RenderOptions.EdgeMode="Aliased">
+            <Viewport3D.Camera>
+                <OrthographicCamera x:Name="camera" Width="2"
+                    FarPlaneDistance="10"
+	                NearPlaneDistance="1" 
+	                LookDirection="0,0,-1"
+	                UpDirection="0,1,0"
+	                Position="0,0,2" />
+            </Viewport3D.Camera>
+            <Viewport3D.Children>
+                <ModelVisual3D x:Name="Light1">
+                    <ModelVisual3D.Content>
+                        <DirectionalLight Color="White" Direction="1, 1, -1" />
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+                <ModelVisual3D x:Name="Light2">
+                    <ModelVisual3D.Content>
+                        <DirectionalLight Color="White" Direction="-1, 1, -1" />
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+                <ModelVisual3D x:Name="Light3">
+                    <ModelVisual3D.Content>
+                        <DirectionalLight Color="White" Direction="0,-1,-0.5" />
+                    </ModelVisual3D.Content>
+                </ModelVisual3D>
+            </Viewport3D.Children>
+        </Viewport3D>
+
+        <Canvas x:Name="canvasOn3D"
+                Grid.Column="1"
+                Grid.Row="0"
+                Background="Transparent" 
+                MouseUp="OnViewportMouseUp"  
+                MouseDown="OnViewportMouseDown"  
+                MouseMove="OnViewportMouseMove" Margin="0,0,0,0">
+        </Canvas>
+
+        <Canvas Name="controlPane" 
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.RowSpan="1" 
+                Background="FloralWhite" 
+                HorizontalAlignment="Left" 
+                Margin="0,10" 
+                Width="auto">
+
+            <GroupBox Header="Zmienna X" Height="65" Width="152" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="DarkBlue" Canvas.Left="8" Canvas.Top="5">
+                <ComboBox x:Name="comboBoxX" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Width="120" />
+            </GroupBox>
+            <GroupBox Header="Zmienna Y" Height="65" Width="152" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="DarkBlue" Canvas.Left="8" Canvas.Top="75">
+                <ComboBox x:Name="comboBoxY" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Width="120" />
+            </GroupBox>
+            <GroupBox Header="Zmienna Z" Height="65" Width="152" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="DarkBlue" Canvas.Left="8" Canvas.Top="145">
+                <ComboBox x:Name="comboBoxZ" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Width="120" />
+            </GroupBox>
+
+
+
+        </Canvas>
+        <Button x:Name="draw3DButton" Content="Rysuj" HorizontalAlignment="Left" Margin="40,240,0,0" VerticalAlignment="Top" Width="80" Height="25" Click="Draw3DButton_Click"/>
+    </Grid>
+</Window>
